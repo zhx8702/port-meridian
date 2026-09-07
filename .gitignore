@@ -1,0 +1,11 @@
+# Local capture and verification helpers contain machine-specific tool paths.
+/verify.cjs
+/clearance.cjs
+/screenshots.cjs
+/record-demo.cjs
+/check-video.cjs
+
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
