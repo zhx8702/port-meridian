@@ -9,6 +9,10 @@
 | Port Meridian：体素铁路沙盘 | [进入火车沙盘](https://zhx8702.github.io/port-meridian/train/) | [说明](train/README.md) · [提示词](train/PROMPT.md) |
 | 一缸小世界：体素鱼缸 | [进入鱼缸](https://zhx8702.github.io/port-meridian/aquarium/) | [说明](aquarium/README.md) · [提示词](aquarium/PROMPT.md) |
 
+## 开发计划
+
+[鱼缸 V2 开发任务](docs/aquarium-v2-tasks.md)：真实养护、生态模拟和新手教程的优先级、依赖与验收标准。当前处于规划阶段，线上鱼缸仍为 V1。
+
 ## Port Meridian
 
 木桌上的 HO 比例铁路：运行中的客货列车、港口、小镇、机车转盘、昼夜灯光与实体控制器。

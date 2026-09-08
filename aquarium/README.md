@@ -4,6 +4,8 @@
 
 **[在线体验](https://zhx8702.github.io/port-meridian/aquarium/)** · **[返回 Demo 目录](../README.md)** · **[复现提示词](PROMPT.md)**
 
+[V2 开发任务与优先级](../docs/aquarium-v2-tasks.md)：已整理真实养护、生态模拟和新手教程的开发计划，当前页面仍为 V1。
+
 ![鱼缸白天视图](desktop.png)
 
 ## 打开方式
