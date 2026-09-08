@@ -1,67 +1,80 @@
-# Port Meridian
+# GPT-6 Demos
 
-一个用 Three.js 搭建的体素风格模型铁路沙盘。整个应用只有一个 HTML 文件：木桌、房间、铁路、建筑、车辆、灯光和声音均由代码生成，不使用外部图片、模型或字体。
+使用 GPT-6 制作的交互 demo 集合。每个作品独立存放，当前收录两个可直接用 Chrome 打开的单文件 Three.js 微缩场景。
 
-**[在线体验](https://zhx8702.github.io/port-meridian/)** · **[下载 Release](https://github.com/zhx8702/port-meridian/releases/latest)** · **[复现提示词](PROMPT.md)**
+**[打开作品目录](https://zhx8702.github.io/port-meridian/)**
 
-![白天的 Port Meridian 模型铁路](desktop.png)
+| 作品 | 在线体验 | 文档与提示词 |
+| --- | --- | --- |
+| Port Meridian：体素铁路沙盘 | [进入火车沙盘](https://zhx8702.github.io/port-meridian/train/) | [说明](train/README.md) · [提示词](train/PROMPT.md) |
+| 一缸小世界：体素鱼缸 | [进入鱼缸](https://zhx8702.github.io/port-meridian/aquarium/) | [说明](aquarium/README.md) · [提示词](aquarium/PROMPT.md) |
 
-[观看演示视频（MP4，约 30 秒，5.9 MB）](port-meridian-demo.mp4) · [视频画面预览](video-preview.png) · [手机视图](mobile.png)
+## Port Meridian
 
-## 打开项目
+木桌上的 HO 比例铁路：运行中的客货列车、港口、小镇、机车转盘、昼夜灯光与实体控制器。
 
-1. 下载仓库 ZIP 并解压，或克隆仓库：
+[![Port Meridian 火车沙盘](train/desktop.png)](https://zhx8702.github.io/port-meridian/train/)
 
-   ```bash
-   git clone https://github.com/zhx8702/port-meridian.git
-   ```
+## 一缸小世界
 
-2. 用 Chrome 打开 `index.html`。
-3. 等待 Three.js 加载完成，列车会自动开始运行。
+房间里的水草鱼缸：18 条彩色小鱼、气泡、水草、沉木和宝箱，支持投喂、调速与昼夜灯光控制。
 
-不需要安装依赖、构建项目或启动本地服务器。首次打开需要联网，从 jsDelivr 加载固定版本的 Three.js 及其 OrbitControls 模块。
+[![一缸小世界鱼缸](aquarium/desktop.png)](https://zhx8702.github.io/port-meridian/aquarium/)
 
-## 沙盘内容
+## 本地打开
 
-- 两条运行环线、独立调速的客运与货运列车，以及往返作业的调车机车。
-- 编组场、车站、带旋转转盘的机务段和机车库。
-- 彩色小镇、工业厂房、水塔、喷泉与体素树木。
-- 港口、曲线铁路桥、货物吊机、拖船、帆船和灯塔。
-- 移动的汽车、货车、叉车、行人，以及烟雾、水面与喷泉动画。
-- 昼夜循环、车厢和建筑灯光、街灯、铁路信号与旋转灯塔光束。
-- 木桌正面的可拖动油门杆、开关与按钮。
+```bash
+git clone https://github.com/zhx8702/port-meridian.git
+```
 
-## 操作
+用 Chrome 打开根目录 `index.html`，从目录进入作品；也可单独打开 `train/index.html` 或 `aquarium/index.html`。
 
-| 控件 | 功能 |
-| --- | --- |
-| 拖动场景空白区域 | 旋转观察视角 |
-| 鼠标滚轮或双指缩放 | 拉近、拉远 |
-| 桌面前侧两根控制杆 | 分别调整客运与货运列车速度 |
-| LIGHTS | 开关建筑、车辆和线路灯光 |
-| DAY / NIGHT | 开关自动昼夜循环 |
-| CRANE | 启停港口吊机 |
-| TURNTABLE | 让机车转盘旋转 45 度 |
-| WHISTLE | 播放程序合成的汽笛声 |
-| 右上角工具栏 | 暂停、恢复默认视角、打开控制面板、全屏 |
+不需要安装依赖、构建或启动服务器。场景使用 CDN 加载固定版本的 Three.js，首次打开需要联网。场景模型、纹理和标签在各自 HTML 内生成；仓库中的 PNG、JPG 和 MP4 仅用于作品预览及文档。
 
-控制面板也可调节时间，并提供适合小屏幕使用的较大控件。拖动时间滑杆会关闭自动昼夜循环。
+## 目录结构
 
-## 夜景
+```text
+port-meridian/
+  index.html             # GPT-6 Demos 作品目录
+  README.md              # 仓库说明
+  PROMPT.md              # 提示词索引
+  .nojekyll              # GitHub Pages 直接发布静态文件
+  train/
+    index.html           # 火车完整应用
+    README.md
+    PROMPT.md
+    desktop.png
+    night.png
+    ...                  # 原有手机截图、演示视频和封面
+  aquarium/
+    index.html           # 鱼缸完整应用
+    README.md
+    PROMPT.md
+    desktop.png
+    night.png
+    mobile.png
+```
 
-![Port Meridian 夜景](night.png)
+## GitHub Pages
 
-## 文件
+一个仓库对应一个项目站点，但站点可以包含任意多个 HTML 页面和子目录。本仓库从 **`main` 分支的 `/ (root)`** 发布：
 
-- `index.html`：完整应用，包含样式、场景、交互和动画。
-- `PROMPT.md`：原始生成提示词，以及补充实现和验收要点。
-- `port-meridian-demo.mp4`：约 30 秒的无声演示，1280 × 800、24 fps、H.264。
-- `desktop.png`、`night.png`：桌面视图预览。
-- `mobile.png`、`mobile-controls.png`：移动端预览。
-- `video-cover.jpg`、`video-preview.png`：视频封面与分镜预览。
+- `/port-meridian/`：作品目录。
+- `/port-meridian/train/`：火车沙盘。
+- `/port-meridian/aquarium/`：鱼缸。
 
-## 技术与验证
+推送到 `main` 后 GitHub Pages 自动重新发布，不需要额外的构建工具或工作流。仓库仍使用 `port-meridian` 这个名称，以保持现有仓库地址和站点根地址稳定；原来根地址上的火车已迁至 `/train/`。
 
-使用 Three.js 0.170.0、OrbitControls、实例化体素几何体、Canvas 生成的标牌纹理和 Web Audio 合成汽笛。界面内嵌了少量 Lucide 图标，其许可说明保留在 HTML 中。
+## 添加新 Demo
 
-已在 Chrome 中检查桌面与手机尺寸的渲染、列车运动、实体控制杆和开关、转盘、灯光、暂停及控制面板；对两条完整运行环线进行了采样净空检查。演示视频通过完整解码和 Chrome 播放检查。
+1. 新建语义明确的英文目录，例如 `terrarium/`。
+2. 放入独立的 `index.html`、`README.md`、`PROMPT.md` 和预览图。
+3. 在根目录 `index.html` 添加作品条目，更新作品数量，并使用相对路径链接到新作品。
+4. 更新本 README 的作品表和根目录 `PROMPT.md` 的索引。
+5. 检查首页到作品的跳转、返回目录、桌面与手机渲染，再提交并推送到 `main`。
+
+各作品中的「GPT-6 DEMOS」链接可返回目录。单独下载某个 HTML 时，场景仍能独立运行；返回目录链接需要完整仓库的目录结构。
+
+## 历史版本
+
+[v1.0.0](https://github.com/zhx8702/port-meridian/releases/tag/v1.0.0) 是最初的 Port Meridian 火车作品版本，其标签和 Release 保留。当前 demo 集合以 `main` 分支及上方在线入口为准。
